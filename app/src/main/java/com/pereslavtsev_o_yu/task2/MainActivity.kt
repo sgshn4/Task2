@@ -26,15 +26,18 @@ val animalsArray = arrayOf(
     "Bird"
 )
 
-class MainActivity : ComponentActivity() {
-    @SuppressLint("MissingInflatedId")
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_layout)
         val viewPager = findViewById<ViewPager2>(R.id.pager)
         val tabLayout = findViewById<TabLayout>(R.id.tab)
-        val fragmentManager = getFragmentManager()
-        val adapter = ViewPagerAdapter(, lifecycle)
+        val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
+        viewPager.adapter = adapter
+
+        TabLayoutMediator(tabLayout, viewPager) {tab, position ->
+            tab.text = animalsArray[position]
+        }.attach()
     }
 }
 
