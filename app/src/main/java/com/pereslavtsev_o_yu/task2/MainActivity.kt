@@ -21,9 +21,9 @@ import androidx.fragment.app.FragmentActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 val animalsArray = arrayOf(
-    "Cat",
-    "Dog",
-    "Bird"
+    "Upcoming",
+    "Launches",
+    "Rockets"
 )
 
 class MainActivity : AppCompatActivity() {
@@ -38,21 +38,5 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager) {tab, position ->
             tab.text = animalsArray[position]
         }.attach()
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Task2Theme {
-        Greeting("Android")
     }
 }

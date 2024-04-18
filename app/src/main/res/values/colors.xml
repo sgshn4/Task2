@@ -11,4 +11,6 @@
     <color name="tab_inactive">#96000000</color>
     <color name="black_56">#8F000000</color>
     <color name="black_53">#87000000</color>
+    <color name="red">#FFFF0000</color>
+    <color name="active_rocket">#FF00D215</color>
 </resources>
