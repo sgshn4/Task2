@@ -1,10 +1,12 @@
 package com.pereslavtsev_o_yu.task2
 
 import android.app.Fragment
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,5 +57,24 @@ class RocketsFragment : androidx.fragment.app.Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        view.findViewById<ImageView>(R.id.image_1).setOnClickListener(View.OnClickListener {
+            val intent = Intent(context, RocketInfo::class.java)
+            startActivity(intent)
+
+        })
+        view.findViewById<ImageView>(R.id.image_2).setOnClickListener(View.OnClickListener {
+            val intent = Intent(context, RocketInfo::class.java)
+            startActivity(intent)
+
+        })
+        view.findViewById<ImageView>(R.id.image_3).setOnClickListener(View.OnClickListener {
+            val intent = Intent(context, RocketInfo::class.java)
+            startActivity(intent)
+
+        })
     }
 }
